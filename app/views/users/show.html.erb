@@ -1,0 +1,22 @@
+<h1>
+  <% if @user.image.present? %>
+    <%= image_tag @user.image %>
+  <% else %>
+    <%= gravatar_for @user %>
+  <% end %>
+  
+    <%= @user.name %>
+    
+    
+      <div class="field">
+    <% if @tare.image? %>
+      <div class="thumbnail">
+        <%= image_tag @tare.image.url %>
+      </div>
+    <% end %><br>
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
+    <%= f.hidden_field :image_cache %>
+  </div>
+    
+</h1>
